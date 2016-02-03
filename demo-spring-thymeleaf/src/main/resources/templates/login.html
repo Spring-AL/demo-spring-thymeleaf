@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	
+	</head>
+	
+	<body>
+		<form class="form-signin" th:action="@{/login}" method="post">
+			<div th:if="${param.error != null}"
+				class="aui-message aui-message-error">
+				<p>Login inválido</p>
+			</div>
+			<h2 class="form-signin-heading">Acesse sua conta</h2>
+			<label for="inputEmail" class="sr-only">E-mail</label> <input
+				type="text" class="form-control" required="required"
+				placeholder="Email" name="username" /> <label for="inputPassword"
+				class="sr-only">Password</label> <input required="required"
+				type="password" name="password" class="form-control"
+				placeholder="Senha" />
+		
+			<div class="form-group">
+				<label> <a th:href="@{/recuperarsenha}"
+					style="font-size: 13px;">Esqueceu sua senha ?</a>
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+			<br /> <span>Ainda não é registrado? <a th:href="@{/}">Registre-se
+					agora</a></span>
+		</form>
+	</body>	
+	
+</html>

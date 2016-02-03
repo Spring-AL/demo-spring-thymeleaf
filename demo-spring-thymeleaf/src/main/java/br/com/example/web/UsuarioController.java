@@ -13,10 +13,15 @@ public class UsuarioController {
 
 	@Autowired private UsuarioService usuarioService;
 	
-	@RequestMapping(value = "/index", method =RequestMethod.GET)
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("listaDeUsuario", usuarioService.listaDeUsuarios());
 		return "usuarios";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	private String login() {
+		return "login";
 	}
 
 }
